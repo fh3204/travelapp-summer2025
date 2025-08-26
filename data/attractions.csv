@@ -1,0 +1,100 @@
+attraction_name,attraction_type,is_kid_friendly,is_indoor,is_outdoor,cost_level,duration_hours,popularity_score,day_number,is_weekend,num_family_members,num_kids,age_range_kids,budget_per_day,total_trip_days,travel_type,interest_history,interest_adventure,interest_food,interest_shopping,interest_,interest_nature,interest_photography,interest_culture,is_recommended,latitude,longitude,cost
+Museum of the future,"History, Walking, Cultural, Family-Friendly",1,1,0,high,1.2,3.67,2,0,5,3,09-May,800,5,couple,0,0,0,1,0,1,1,0,1,25.2635211,55.2971826,145
+Dubai Creek Golf & Yacht Club,"Walking, Shopping, Adventure",0,0,1,low,3.5,4.34,5,1,4,0,09-May,800,7,solo,1,0,1,0,1,1,1,1,1,25.2416922,55.3333163,300
+The Theatre at Mall of the Emirates,"Activity, Family-Friendly",1,1,0,low,2.7,3.11,5,1,6,3,09-May,300,7,solo,0,0,1,0,1,0,1,0,0,25.118055,55.200558,45
+Ras Al Khor Wildlife Sanctuary,"Walking, Adventure, Sight-seeing",0,0,1,medium,2.7,4.7,1,0,2,2,15-Oct,300,7,solo,0,0,0,0,0,0,0,0,1,25.1917984,55.3220824,0
+Wild Wadi Waterpark,"Walking, Adventure, Theme Park, Family-Friendly",1,0,1,high,1.8,3.02,6,1,2,1,15-Oct,1500,2,couple,1,1,0,0,1,0,0,0,0,25.1396485,55.189428,269
+Etihad Museum,"History, Walking",0,1,0,low,3.3,3.36,4,0,5,2,09-May,1000,4,solo,1,1,1,0,0,0,1,0,1,25.2414327,55.269331,25
+Dubai Marina,"Sight-seeing, Shopping, Walking",1,0,1,medium,1.8,3.65,5,1,4,2,15-Oct,300,3,couple,1,0,1,1,0,0,0,1,1,25.0786415,55.1352524,0
+Dubai Ladies Club,"Walking, Shopping, Adventure",1,1,1,high,3,4.29,3,1,2,1,15-Oct,300,7,couple,0,1,0,0,1,1,0,1,1,25.2026,55.2385,150
+Dubai Miracle Garden,"Sight-seeing, Walking",1,0,1,high,1.3,4.83,4,0,4,2,15-Oct,1500,6,couple,1,0,0,0,1,0,1,1,1,25.0597234,55.2445979,55
+Dubai Gold Souk,"Walking, Adventure, Sight-seeing, Cultural",1,1,1,high,2.3,4.97,2,0,6,2,15-Oct,800,7,solo,0,0,1,0,1,1,0,1,1,25.2700589,55.298092,0
+City Walk,"Walking, Sight-seeing",1,0,1,high,2.1,4.44,1,1,6,0,0-4,1500,6,couple,0,1,0,0,0,0,0,1,1,25.2081589,55.2618737,0
+The Dubai Mall,"Walking, Shopping",1,1,0,medium,1.5,3.47,7,1,2,0,15-Oct,800,2,family,0,1,0,1,0,0,1,0,1,25.197044,55.2789516,0
+Al Habtoor City,"Walking, Shopping",1,0,1,low,3.4,4.15,1,1,3,2,0-4,300,7,couple,1,1,1,1,1,1,1,0,1,25.1831798,55.2558165,0
+Dubai Design District,"Walking, Cultural",0,1,1,medium,2.6,4.49,1,1,5,0,15-Oct,300,3,solo,0,1,1,0,0,0,1,0,1,25.1883374,55.2974839,0
+The Lost Chambers Aquarium,"Walking, Sight-seeing",0,1,0,low,1.9,4.18,7,1,6,0,0-4,1000,3,couple,0,0,0,0,0,1,0,0,1,25.1321,55.1174,135
+Kite Beach,"Walking, Beach",1,0,1,low,1.5,4.91,2,0,2,3,09-May,1000,2,couple,1,0,0,0,0,0,0,1,1,25.1648,55.2073,0
+Green Planet Dubai,"Walking, Sight-seeing",0,1,0,high,3.4,4.59,4,0,6,1,15-Oct,300,6,solo,0,0,0,0,1,0,1,1,1,25.2061841,55.2605043,100
+Dubai Silicon Oasis,"Sight-seeing, Shopping",0,0,1,high,2.1,4.79,2,0,5,0,0-4,1000,3,solo,1,0,0,1,0,1,0,1,1,25.1205792,55.3886553,0
+Al Barsha Pond Park,"Walking, Adventure",0,0,1,high,1.9,3.25,4,1,3,3,0-4,500,7,solo,1,0,0,1,0,1,1,0,0,25.1012524,55.2028233,0
+Spice Souk,"Walking, Adventure, Sight-seeing, Cultural",1,0,1,medium,3.8,3.49,6,0,3,1,09-May,300,2,family,0,0,0,1,1,1,1,1,1,25.2676172,55.2971349,5
+Souk Madinat Jumeirah,"History, Walking, Shopping",1,0,1,low,3.7,4.08,3,1,6,0,0-4,1000,6,family,1,1,0,1,1,0,0,0,1,25.1334241,55.1857858,0
+Textile Souk,"Walking, Adventure, Sight-seeing, Cultural",1,0,1,low,3.3,3.59,6,0,2,2,0-4,1500,3,couple,0,1,1,1,0,1,1,0,1,25.2641413,55.296206,0
+Dubai Outlet Mall,"Walking, Shopping",1,1,0,low,1.5,3.61,6,1,5,1,0-4,800,3,couple,1,0,0,1,0,0,0,0,1,25.0724299,55.4005511,0
+IMG Worlds of Adventure,"Walking, Adventure, Theme Park",1,1,0,medium,1.6,4.73,7,1,6,0,0-4,1000,4,solo,0,1,1,0,0,1,0,0,1,25.0813943,55.3181342,295
+Burj Khalifa: The Top,"Adventure, Sight-seeing",0,1,0,medium,3.2,4.35,1,1,3,0,0-4,1000,3,solo,1,0,0,1,1,1,0,1,1,25.1972,55.2744,170
+Dubai International Financial Centre,"Cultural, Sight-seeing",1,1,1,medium,3.5,4.42,2,0,4,0,15-Oct,1000,5,solo,0,0,1,0,0,1,0,0,1,25.2134877,55.2813591,0
+Wafi Mall,"Walking, Shopping",1,1,0,low,1.9,4.83,1,0,6,2,09-May,500,7,solo,1,0,0,1,0,1,1,1,1,25.22876,55.3192275,0
+Dubai Studio City,"Walking, Sight-seeing",1,0,0,high,3.3,3.4,7,1,6,3,09-May,1000,5,couple,0,0,1,1,0,1,0,0,1,25.0415641,55.2522587,0
+Dubai Marina Yacht Club,"Walking, Shopping, Adventure",1,1,1,high,2.7,4.81,5,1,5,0,0-4,1000,7,family,0,1,0,1,1,0,0,0,1,25.0723326,55.1359834,0
+Motiongate Dubai,"Walking, Adventure, Theme Park",1,0,1,high,3.5,3.64,1,1,3,2,15-Oct,500,3,solo,1,1,1,0,0,1,0,1,1,24.9216634,55.0028777,275
+Dubai Hills Golf Club,"Sight-seeing, Walking, Adventure",1,0,1,high,1,3.14,4,1,6,1,15-Oct,1000,3,solo,0,0,1,1,1,0,1,1,0,25.1213955,55.2643363,300
+JBR Walk,"Sight-seeing, Walking, Shopping",0,0,1,low,1.2,4.46,4,0,2,0,09-May,300,4,solo,1,1,0,1,0,1,0,1,1,25.0729189,55.1292518,0
+The Green Planet,"History, Walking",1,1,0,medium,4,4.48,4,0,2,1,15-Oct,1000,3,family,1,1,1,1,0,0,0,0,1,25.2061841,55.2605043,100
+Bluewaters Island,"Adventure, Shopping",1,1,1,low,2.9,3.23,6,0,2,3,09-May,1000,2,family,1,0,0,1,0,0,0,1,0,25.082916,55.122156,0
+Dubai Silicon Park,Walking,0,0,1,low,3.5,4.87,2,0,5,1,09-May,800,2,solo,1,0,1,0,0,1,0,1,1,25.1226398,55.3960783,0
+Al Fahidi Historical District,"History, Walking, Cultural",0,0,1,low,3.7,4.16,1,1,5,2,09-May,500,7,family,1,1,0,1,1,0,0,0,1,25.2637,55.2994,0
+Al Mamzar Beach Park,"Walking, Adventure",1,0,1,high,3.6,3.6,1,0,3,1,0-4,1000,4,couple,1,0,1,1,0,1,0,1,1,25.3226994,55.3473626,5
+Dubai Hills Mall,"Walking, Shopping",1,1,0,high,1.1,4.41,1,0,3,1,15-Oct,500,5,couple,1,0,1,0,0,1,1,1,1,25.1016705,55.2399292,0
+Meydan Racecourse,Shopping,1,0,1,medium,3.4,4.72,1,0,4,0,15-Oct,1000,4,couple,0,0,0,1,1,1,1,1,1,25.1576344,55.3031944,0
+Mall of the Emirates,"Walking, Shopping",0,1,0,medium,2.3,3.5,4,0,6,0,15-Oct,300,2,solo,0,0,0,0,1,0,1,1,1,25.1212029,55.2004469,0
+Aquaventure Waterpark,"Walking, Adventure, Theme Park",1,0,1,medium,3.3,4.41,1,0,5,1,0-4,1000,7,family,1,0,1,1,0,1,1,0,1,25.134599,55.1220701,335
+Al Marmoom Desert Conservation,"History, Walking, Cultural",1,0,1,high,2.6,4.87,3,1,2,0,15-Oct,1000,7,couple,1,1,0,1,0,0,1,0,1,24.8451738,55.3512575,0
+The Walk at JBR,"Sight-seeing, Walking, Shopping",1,0,1,low,1.8,3.93,7,0,3,1,0-4,800,7,couple,1,1,0,1,0,1,0,1,1,25.079195,55.1354936,0
+Jumeirah Beach,"Walking, Sight-seeing",1,0,1,low,1.1,4.48,5,0,4,3,09-May,1000,2,solo,0,1,0,1,1,0,0,0,1,25.1850059,55.223492,0
+Ski Dubai,Adventure,0,1,0,medium,3.1,4.67,6,1,6,1,15-Oct,1000,6,couple,0,0,1,1,1,1,0,0,1,25.1173913,55.1982186,250
+Dubai Frame Plaza,"History, Walking, Sight-seeing",0,1,0,low,1.9,3.42,4,1,3,0,09-May,300,4,couple,1,1,1,1,0,0,0,1,1,25.2356,55.2982,50
+Dubai Opera Garden,"Walking, Adventure, Sight-seeing",1,0,1,low,1.2,4.5,6,1,2,1,0-4,300,5,family,1,0,0,0,0,1,0,0,1,25.1952607,55.2733253,0
+Dubai Desert Conservation Reserve,"Walking, Sight-seeing",1,0,1,low,2.4,4.02,5,1,5,2,15-Oct,1500,5,couple,0,0,1,0,1,0,1,1,1,24.8765,55.5775,0
+Dubai Creek,"Walking, Shopping, Sight-seeing",0,0,1,high,4,4.77,2,1,4,3,09-May,500,7,family,0,1,0,1,1,1,1,1,1,25.2515527,55.3217467,5
+Dragon Mart,"Walking, Shopping",0,1,0,high,1.6,4.5,1,0,5,0,15-Oct,300,7,couple,0,1,1,0,0,1,1,1,1,25.1753774,55.4107385,0
+Dubai World Trade Centre,"History, Cultural",0,1,0,high,1.5,4.93,7,1,4,2,15-Oct,800,5,couple,1,0,1,0,1,1,0,0,1,25.2241979,55.2864678,0
+Dubai Offshore Sailing Club,"Walking, Adventure, Cultural",1,0,1,low,1.4,4.72,6,0,5,1,09-May,300,5,solo,0,1,0,1,1,0,1,1,1,25.1748898,55.2172922,0
+Dubai Butterfly Garden,"Walking, Sight-seeing",0,0,1,low,2.6,4.37,2,0,3,0,09-May,300,2,family,1,0,1,0,1,0,0,1,1,25.0620564,55.2462541,55
+Dubai Water Canal,"Sight-seeing, Walking",1,0,1,medium,1.8,4.85,4,0,3,1,09-May,300,6,solo,0,0,0,1,1,1,1,0,1,25.1884394,55.2473226,0
+Dubai Sports City,"Walking, Shopping, Cultural",0,1,1,medium,1.6,3.45,5,0,6,1,15-Oct,500,3,couple,1,1,1,1,1,0,1,0,1,25.0321379,55.219353,0
+Dubai Expo City,"Walking, Cultural",0,1,1,high,1.8,4.87,4,0,3,3,0-4,1000,6,family,0,0,0,0,1,1,1,0,1,24.9634934,55.1460846,0
+Hatta Wadi Hub,"Cultural, Sight-seeing, Walking",1,0,1,medium,1.9,3.43,3,1,5,3,09-May,800,5,family,0,0,0,1,0,1,1,0,1,24.8139804,56.1598617,50
+Coca-Cola Arena,Walking,1,1,0,high,3.1,4.41,7,0,2,2,15-Oct,800,3,solo,1,1,0,0,0,0,0,0,1,25.2036463,55.2658062,0
+La Mer Beach,"Shopping, Sight-seeing",0,0,1,medium,2.4,3.22,2,1,4,0,15-Oct,300,6,solo,1,0,0,1,0,1,0,0,0,25.2316202,55.2591749,0
+Jumeirah Fishing Harbour,"Culural, Walking, Adventure",0,0,1,low,3.1,3.9,2,1,4,2,15-Oct,300,2,solo,1,1,1,0,1,0,1,1,1,25.2115199,55.2448126,0
+The Pointe,"Walking, Shopping",1,1,1,high,1.4,3.01,4,0,5,0,09-May,800,7,family,1,0,1,1,0,1,1,1,0,25.1272619,55.1214694,0
+Hatta Heritage Village,"History, Walking, Cultural",0,0,1,medium,2.5,3.94,5,1,2,0,09-May,1500,5,family,1,1,0,0,0,0,0,0,1,24.7959188,56.119184,0
+Dubai Marina Mall,"Walking, Shopping",1,1,0,medium,1.1,4.2,5,1,6,2,09-May,300,4,solo,1,1,0,0,1,1,0,1,1,25.0766361,55.1402187,0
+Al Qudra Lake,"Walking, Adventure",1,0,1,medium,3.4,4.08,1,0,3,3,15-Oct,800,5,couple,0,1,1,0,1,1,0,1,1,24.8346594,55.3742798,0
+Palm Jumeirah,"Theme Park, Walking, Sight-seeing",1,1,1,high,1.8,3.62,4,0,5,3,15-Oct,1500,6,solo,0,0,0,0,0,0,1,1,1,25.1180879,55.1342009,0
+Dubai Frame Garden,"Sight-seeing, Walking",1,0,1,low,1.5,4.16,6,1,5,0,09-May,1000,7,couple,1,1,0,0,1,0,1,1,1,25.2342,55.3015,0
+Legoland Dubai,"Walking, Adventure, Theme Park",1,0,1,high,1.4,3.61,4,0,6,1,15-Oct,800,5,solo,0,1,1,0,0,1,0,1,1,24.9188167,55.0121902,295
+Global Village,"Sight-seeing, Shopping, Walking",1,0,1,high,3.3,3.68,5,0,5,0,0-4,300,4,solo,1,0,0,1,1,0,1,1,1,25.0681458,55.3073078,15
+Boxpark,"Adventure, Theme Park",1,1,0,medium,3.7,3.04,2,0,4,0,0-4,500,2,couple,0,0,1,1,1,0,0,1,0,25.1993411,55.2487901,0
+Mirdif City Centre,"Walking, Shopping",1,1,0,low,1,3.43,6,1,2,0,15-Oct,800,2,solo,1,1,1,0,0,1,1,1,1,25.2173429,55.4071287,0
+Dubai Media City,Walking,1,1,1,medium,1.6,4.33,6,1,3,0,09-May,1500,7,solo,0,1,0,1,0,0,1,0,1,25.0935245,55.1515716,0
+Emirates Golf Club,"Sight-seeing, Walking, Adventure",0,0,1,medium,2.3,3.82,5,1,2,0,0-4,800,6,couple,0,0,0,0,0,1,0,0,1,25.0879155,55.1575394,400
+Dubai Safari Park,"History, Walking",0,0,1,high,3.9,4.1,7,0,4,3,15-Oct,300,3,family,1,1,0,1,1,0,0,0,1,25.1793246,55.4515731,50
+Zabeel Park,"Walking, Adventure",1,0,1,low,2.1,3.34,6,1,5,2,09-May,300,7,solo,0,0,0,1,0,0,0,0,1,25.2352957,55.2979262,5
+Dubai Festival City Mall,"Walking, Shopping",1,0,1,high,1.4,3.87,7,1,2,3,0-4,1500,5,couple,1,1,1,0,0,0,0,1,1,25.2216006,55.3574733,0
+Burj Al Arab,"Cultural, Sight-seeing",1,1,1,medium,1.2,3.47,4,0,3,0,0-4,300,5,family,1,1,0,1,1,0,1,0,1,25.1413271,55.1853967,500
+Jumeirah Golf Estates,"Sight-seeing, Walking, Adventure",0,0,1,low,1.3,4.44,7,1,5,2,09-May,500,6,couple,1,1,0,0,1,1,1,1,1,25.0177925,55.1633352,500
+Al Seef,"History, Cultural",0,1,1,high,1.8,3.16,5,0,5,1,09-May,1000,3,couple,0,0,1,0,0,1,1,0,0,25.2638784,55.3039617,0
+Dubai Dolphinarium,Walking,1,1,0,low,1.1,3.8,3,0,3,3,09-May,1000,7,couple,0,1,1,0,0,0,1,0,1,25.2346166,55.3267901,75
+Alserkal Avenue,"Cultural, Sight-seeing, Shopping, Walking",0,1,1,medium,1.6,3.66,6,0,2,2,09-May,1500,6,family,1,0,1,0,0,1,1,1,1,25.1418676,55.2255782,0
+Ibn Battuta Mall,"Walking, Shopping",1,1,0,high,1.5,3.36,1,1,6,0,15-Oct,800,5,family,1,0,0,1,0,0,0,1,1,25.0445796,55.1205767,0
+Al Qasr Beach,"Walking, Shopping, Adventure",1,0,1,low,2.4,4.38,7,0,4,1,0-4,300,7,solo,0,0,1,1,0,0,0,1,1,25.11236,55.16876,0
+Dubai Maritime City,"Walking, Shopping",1,1,1,medium,3.9,4.46,4,0,4,3,09-May,1000,5,solo,1,1,0,1,1,1,0,0,1,25.262151,55.2653704,0
+Hatta Dam,"Walking, Sight-seeing, Cultural",0,0,1,medium,3.8,4.96,6,0,4,3,09-May,500,2,couple,0,1,0,0,0,0,1,1,1,24.7836254,56.1144855,0
+Ain Dubai,Shopping,1,1,1,high,3.3,4.03,1,1,3,3,09-May,1500,5,couple,0,0,1,1,0,1,0,0,1,25.080052,55.1237893,130
+Dubai Creek Harbour,"History, Walking, Adventure",0,0,1,medium,3.4,4.62,5,0,6,0,15-Oct,1500,2,couple,1,1,1,1,1,1,1,1,1,25.1981072,55.3618483,0
+Dubai Frame,"Cultural, Sight-seeing",1,1,0,low,1.4,4.96,7,0,6,0,0-4,800,7,couple,1,0,0,0,1,0,0,1,1,25.235456,55.3003671,50
+Dubai Garden Glow,"Walking, Sight-seeing",0,0,1,low,1.5,4.58,5,1,3,2,0-4,500,4,solo,0,0,0,0,0,0,1,1,1,25.2290263,55.2960926,75
+Dubai Festival Plaza,Walking,0,1,0,medium,2.8,3.3,7,1,3,0,15-Oct,1000,7,family,0,1,0,0,1,0,1,0,0,25.0201,55.1428,0
+Dubai Aquarium & Underwater Zoo,Sight-seeing,1,1,0,low,2.6,3.22,6,1,5,0,0-4,500,2,couple,0,0,1,1,0,0,0,1,0,25.1977146,55.2788456,135
+The Beach at JBR,"Sight-seeing, Adventure",1,0,1,low,3.6,3.47,1,1,6,2,0-4,500,3,family,0,0,1,1,1,1,1,0,1,25.079195,55.1354936,0
+Al Khawaneej Walk,"Walking, Shopping",0,0,1,high,3.4,3.32,5,0,3,2,09-May,1500,7,family,0,1,1,1,0,0,1,1,0,25.2282,55.4649,0
+Dubai Parks and Resorts,"Walking, Adventure, Theme Park",1,0,1,medium,3.1,3.38,6,1,6,3,09-May,500,2,couple,0,1,1,0,1,1,0,1,1,24.9198548,55.00868,275
+Dubai Autodrome,"Walking, Sight-seeing, Adventure",1,0,1,low,1.4,4.65,7,1,6,1,09-May,500,5,solo,0,0,1,0,0,1,1,0,1,25.0501582,55.2363423,0
+Mushrif Park,"Walking, Adventure",0,0,1,medium,3.4,3.77,4,1,5,1,09-May,300,7,couple,1,0,1,0,0,1,0,1,1,25.2159956,55.4607436,5
+Dubai Opera,"Cultural, Sight-seeing",1,1,0,medium,2.5,3.52,6,0,3,1,15-Oct,300,3,couple,1,0,1,1,1,0,0,1,1,25.1956562,55.2719522,0
+Dubai Investments Park,"History, Walking, Shopping",1,1,1,medium,1.6,4.77,5,1,3,1,09-May,1000,6,solo,1,1,1,1,0,1,0,1,1,24.9779669,55.1911925,0
+Jumeirah Mosque,"History, Cultural",0,1,1,medium,1.1,3.2,4,0,5,3,09-May,500,5,solo,1,1,0,1,1,1,1,1,0,25.2340631,55.2654821,35
+Dubai College of Tourism,"Cultural, Sight-seeing",1,1,1,high,3.5,4.06,4,1,3,2,15-Oct,500,3,family,1,1,1,1,0,1,1,0,1,25.2278,55.292,0

@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Travel Planner</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Flatpickr -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <style>
+      /* Fix map height inside grid */
+      #map {
+        height: 100%;
+        min-height: 500px;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 min-h-screen p-6">
+    <div class="max-w-6xl mx-auto">
+      <!-- PAGE 1: Form -->
+      <div id="formSection" class="bg-white shadow-xl rounded-2xl p-8">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">
+          Plan Your Perfect Trip
+        </h2>
+        <form id="tripForm" class="space-y-6">
+          <!-- Destination + Group -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Destination</label
+              >
+              <input
+                id="destination"
+                type="text"
+                value="Dubai"
+                readonly
+                class="w-full border rounded-lg p-2 bg-gray-100"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Traveling With</label
+              >
+              <select
+                id="travelGroup"
+                class="w-full border rounded-lg p-2"
+                required
+              >
+                <option value="">Select Group</option>
+                <option value="solo">Solo</option>
+                <option value="couple">Couple</option>
+                <option value="family">Family</option>
+                <option value="friends">Friends</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Budget + Start Time -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Budget (AED)</label
+              >
+              <input
+                id="budget"
+                type="range"
+                min="500"
+                max="10000"
+                step="100"
+                value="500"
+                class="w-full accent-pink-500"
+                oninput="budgetValue.textContent=this.value"
+              />
+              <div class="flex justify-between text-sm text-gray-500">
+                <span>AED 500</span>
+                <span id="budgetValue">500</span>
+                <span>AED 10,000</span>
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Starting Time</label
+              >
+              <input
+                id="startTime"
+                type="text"
+                class="w-full border rounded-lg p-2"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Dates -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Arrival</label
+              >
+              <input
+                id="arrival"
+                type="text"
+                placeholder="DD-MM-YYYY"
+                class="w-full border rounded-lg p-2"
+                required
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Departure</label
+              >
+              <input
+                id="departure"
+                type="text"
+                placeholder="DD-MM-YYYY"
+                class="w-full border rounded-lg p-2"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Interests -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >Select Interests</label
+            >
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+              <label><input type="checkbox" value="Indoor" /> Indoor</label>
+              <label><input type="checkbox" value="Outdoor" /> Outdoor</label>
+              <label><input type="checkbox" value="Activity" /> Activity</label>
+              <label
+                ><input type="checkbox" value="Scenic View" /> Scenic
+                View</label
+              >
+              <label
+                ><input type="checkbox" value="Family-Friendly" />
+                Family-Friendly</label
+              >
+              <label><input type="checkbox" value="Museum" /> Museum</label>
+              <label><input type="checkbox" value="Shopping" /> Shopping</label>
+              <label
+                ><input type="checkbox" value="Adventure" /> Adventure</label
+              >
+              <label><input type="checkbox" value="Beach" /> Beach</label>
+              <label><input type="checkbox" value="Cultural" /> Cultural</label>
+            </div>
+          </div>
+
+          <!-- Button -->
+          <button
+            type="submit"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl transition"
+          >
+            Generate Smart Itinerary
+          </button>
+        </form>
+      </div>
+
+      <!-- PAGE 2: Summary -->
+      <div
+        id="summarySection"
+        class="bg-white shadow-xl rounded-2xl p-8 hidden mt-6"
+      >
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Your Travel Plan</h2>
+        <p class="text-gray-600 mb-6" id="tripDetails"></p>
+
+        <div class="mb-4">
+          <label
+            class="inline-flex items-center space-x-2 text-gray-700 font-medium"
+          >
+            <input type="checkbox" id="toggleDayPlanOnly" />
+            <span>Show only Day-wise Itinerary</span>
+          </label>
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-800 mb-4">Top 4 Picks</h3>
+        <div id="topPicks" class="space-y-4"></div>
+
+        <h3 class="text-xl font-bold text-gray-800 mt-6 mb-4">
+          Full Day-by-Day Itinerary
+        </h3>
+        <div id="dayByDayList" class="space-y-2"></div>
+
+        <div class="flex gap-4 mt-6">
+          <button
+            id="backToFormBtn"
+            class="flex-grow bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded-lg"
+          >
+            Back to Form
+          </button>
+          <button
+            id="viewMapBtn"
+            class="flex-grow bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-lg"
+          >
+            View on Map
+          </button>
+        </div>
+      </div>
+
+      <!-- PAGE 3: Map + Side Summary -->
+      <div
+        id="mapPage"
+        class="bg-white shadow-xl rounded-2xl overflow-hidden hidden mt-6 h-[500px] md:h-[600px]"
+      >
+        <div class="grid grid-cols-1 md:grid-cols-3 h-full">
+          <!-- Map -->
+          <div id="map" class="md:col-span-2 h-full"></div>
+          <!-- Summary Side Panel -->
+          <div class="p-6 border-l overflow-y-auto bg-gray-50">
+            <h3 class="text-xl font-bold mb-4">Itinerary Summary</h3>
+
+            <!-- New dropdown for filtering days -->
+            <label for="dayFilter" class="block font-medium mb-2">
+              Filter by Day:
+            </label>
+            <select
+              id="dayFilter"
+              class="w-full mb-4 border rounded-lg p-2"
+            >
+              <option value="all">All Days</option>
+              <!-- Day options populated dynamically -->
+            </select>
+
+            <div id="mapSummary" class="text-sm leading-relaxed"></div>
+
+            <button
+              id="backToSummaryBtn"
+              class="mt-6 w-full bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded-lg"
+            >
+              Back to Planner
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Date & Time Pickers
+      flatpickr("#arrival", { dateFormat: "d-m-Y" });
+      flatpickr("#departure", { dateFormat: "d-m-Y" });
+      flatpickr("#startTime", {
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "h:i K",
+        defaultHour: 10,
+      });
+
+      // Utils
+      function dayDiff(start, end) {
+        const [sd, sm, sy] = start.split("-").map(Number);
+        const [ed, em, ey] = end.split("-").map(Number);
+        const sDate = new Date(sy, sm - 1, sd);
+        const eDate = new Date(ey, em - 1, ed);
+        return Math.max(
+          1,
+          Math.ceil((eDate - sDate) / (1000 * 60 * 60 * 24)) + 1
+        );
+      }
+
+      // Page switches
+      function showPage(pageId) {
+        ["formSection", "summarySection", "mapPage"].forEach((id) => {
+          document.getElementById(id).classList.toggle("hidden", id !== pageId);
+        });
+      }
+
+      // Leaflet Map variables
+      let map;
+      let dayLayers = [];
+      const colors = ["#FF6B6B", "#4ECDC4", "#1A535C", "#FFA931", "#A363D9"];
+      let currentItinerary = [];
+      let filteredDay = "all";
+
+      function initMap() {
+        if (!map) {
+          map = L.map("map").setView([25.276987, 55.296249], 12);
+          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: "&copy; OpenStreetMap contributors",
+          }).addTo(map);
+        }
+      }
+
+      function clearMapLayers() {
+        dayLayers.forEach((layer) => map.removeLayer(layer));
+        dayLayers = [];
+      }
+
+      function renderItineraryOnMap(days) {
+        clearMapLayers();
+        const allCoords = [];
+
+        // Filter days if needed
+        const daysToRender =
+          filteredDay === "all"
+            ? days
+            : days.filter(
+                (day) =>
+                  day.day.toLowerCase() === filteredDay.toLowerCase()
+              );
+
+        daysToRender.forEach((day, dayIndex) => {
+          const dayColor = colors[dayIndex % colors.length];
+          const coords = [];
+          const layerGroup = L.layerGroup();
+
+          day.activities.forEach((act, actIndex) => {
+            if (act.lat && act.lng) {
+              coords.push([act.lat, act.lng]);
+              allCoords.push([act.lat, act.lng]);
+
+              const icon = L.divIcon({
+                html: `<div style="background:${dayColor};color:white;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-weight:bold;">${
+                  actIndex + 1
+                }</div>`,
+                className: "",
+                iconSize: [28, 28],
+              });
+
+              L.marker([act.lat, act.lng], { icon })
+                .bindPopup(`<b>${act.name || ""}</b><br>${act.time || ""}`)
+                .addTo(layerGroup);
+            }
+          });
+
+          if (coords.length > 1) {
+            L.polyline(coords, {
+              color: dayColor,
+              weight: 3,
+              opacity: 0.8,
+              dashArray: "5, 10",
+            }).addTo(layerGroup);
+          }
+
+          dayLayers.push(layerGroup);
+          layerGroup.addTo(map);
+        });
+
+        if (allCoords.length) {
+          map.fitBounds(allCoords, { padding: [50, 50] });
+        }
+      }
+
+      function renderMapSummary(days) {
+        const summaryContainer = document.getElementById("mapSummary");
+        summaryContainer.innerHTML = "";
+
+        // Filter days similarly
+        const daysToRender =
+          filteredDay === "all"
+            ? days
+            : days.filter(
+                (day) =>
+                  day.day.toLowerCase() === filteredDay.toLowerCase()
+              );
+
+        daysToRender.forEach((day, index) => {
+          // Day header
+          const dayHeader = document.createElement("h3");
+          dayHeader.className = "font-bold mb-2";
+          dayHeader.textContent = `${day.date} (Day ${index + 1})`;
+          summaryContainer.appendChild(dayHeader);
+
+          // Table
+          const table = document.createElement("table");
+          table.className = "w-full mb-4 border border-gray-300 text-sm";
+          table.innerHTML = `
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="border p-1">Time</th>
+          <th class="border p-1">Activity</th>
+          <th class="border p-1">Travel Time</th>
+          <th class="border p-1">Cost</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    `;
+
+          const tbody = table.querySelector("tbody");
+
+          day.activities.forEach((a) => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+        <td class="border p-1">${a.time || "-"}</td>
+        <td class="border p-1">${a.name || "-"}</td>
+        <td class="border p-1">${a.travel_time || "-"}</td>
+        <td class="border p-1">${
+          a.cost && a.cost !== "-" ? `AED ${a.cost}` : "Free entry"
+        }</td>
+      `;
+            tbody.appendChild(row);
+          });
+
+          summaryContainer.appendChild(table);
+        });
+      }
+
+      function populateDayFilter(days) {
+        const dayFilter = document.getElementById("dayFilter");
+        dayFilter.innerHTML = '<option value="all">All Days</option>'; // reset
+
+        days.forEach((day) => {
+          const option = document.createElement("option");
+          option.value = day.day.toLowerCase();
+          option.textContent = `${day.day} (${day.date})`;
+          dayFilter.appendChild(option);
+        });
+      }
+
+      // Toggle Day Plan Only (summary page)
+      function toggleDayPlanView() {
+        const showOnlyDayPlan = document.getElementById("toggleDayPlanOnly").checked;
+        const topPicks = document.getElementById("topPicks");
+        const tripDetails = document.getElementById("tripDetails");
+
+        if (showOnlyDayPlan) {
+          topPicks.style.display = "none";
+          tripDetails.style.display = "none";
+        } else {
+          topPicks.style.display = "block";
+          tripDetails.style.display = "block";
+        }
+      }
+
+      document.getElementById("toggleDayPlanOnly").addEventListener("change", toggleDayPlanView);
+
+      // Handle form submission
+      document
+        .getElementById("tripForm")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const destination = document.getElementById("destination").value;
+          const groupType = document.getElementById("travelGroup").value;
+          const budget = parseInt(document.getElementById("budget").value, 10);
+          const startTime = document.getElementById("startTime").value;
+          const startDate = document.getElementById("arrival").value;
+          const endDate = document.getElementById("departure").value;
+
+          if (!groupType) {
+            alert("Please select traveling group.");
+            return;
+          }
+          if (!startTime) {
+            alert("Please select starting time.");
+            return;
+          }
+          if (!startDate || !endDate) {
+            alert("Please select arrival and departure dates.");
+            return;
+          }
+
+          const tripDuration = dayDiff(startDate, endDate);
+
+          const interests = Array.from(
+            document.querySelectorAll('input[type="checkbox"]:checked')
+          ).map((cb) => cb.value);
+
+          try {
+            const res = await fetch("/api/generate-itinerary", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                group_type: groupType,
+                budget: budget,
+                interests: interests,
+                trip_duration: tripDuration,
+                destination: destination,
+                start_date: startDate,
+                end_date: endDate,
+                start_time: startTime,
+              }),
+            });
+
+            if (!res.ok) {
+              throw new Error(`API Error: ${res.status}`);
+            }
+
+            const result = await res.json();
+            const tripData = result.data;
+
+            // Save itinerary globally for map use
+            currentItinerary = tripData.daily_plan;
+
+            // Populate day filter dropdown on map page
+            populateDayFilter(currentItinerary);
+
+            // Populate summary page
+            document.getElementById(
+              "tripDetails"
+            ).textContent = `${tripData.destination} | ${tripData.group_type} | AED ${tripData.budget} | ${tripData.start_date} to ${tripData.end_date}`;
+
+            // Top Picks
+            const picksContainer = document.getElementById("topPicks");
+            picksContainer.innerHTML = "";
+            tripData.recommendations.forEach((pick) => {
+              const div = document.createElement("div");
+              div.className = "p-4 border rounded-lg";
+              div.innerHTML = `<b>${pick.name}</b> (${pick.category}) - Score: ${pick.score}`;
+              picksContainer.appendChild(div);
+            });
+
+            // Day-by-day itinerary
+            const dayList = document.getElementById("dayByDayList");
+            dayList.innerHTML = "";
+            tripData.daily_plan.forEach((day) => {
+              const dayDiv = document.createElement("div");
+              dayDiv.className = "p-3 border rounded";
+
+              dayDiv.innerHTML =
+                `<b>${day.day} (${day.date})</b><br>` +
+                day.activities
+                  .map((a) => {
+                    const costVal =
+                      a.cost && a.cost !== "-" ? `AED ${a.cost}` : "Free entry";
+                    return `${a.time} - ${a.name} | Travel Time: ${
+                      a.travel_time || "-"
+                    } | Cost: ${costVal}`;
+                  })
+                  .join("<br>");
+
+              dayList.appendChild(dayDiv);
+            });
+
+            showPage("summarySection");
+          } catch (err) {
+            console.error("Error generating itinerary:", err);
+            alert("Sorry, failed to generate itinerary. Please try again.");
+          }
+        });
+
+      // Button event: View map
+      document.getElementById("viewMapBtn").addEventListener("click", () => {
+        showPage("mapPage");
+        initMap();
+        if (currentItinerary) {
+          renderItineraryOnMap(currentItinerary);
+          renderMapSummary(currentItinerary);
+        }
+      });
+
+      // Handle day filter dropdown change
+      document.getElementById("dayFilter").addEventListener("change", (e) => {
+        filteredDay = e.target.value;
+        if (currentItinerary) {
+          renderItineraryOnMap(currentItinerary);
+          renderMapSummary(currentItinerary);
+        }
+      });
+
+      // Button event: Back to summary from map
+      document
+        .getElementById("backToSummaryBtn")
+        .addEventListener("click", () => {
+          showPage("summarySection");
+        });
+
+      // Button event: Back to form from summary
+      document.getElementById("backToFormBtn").addEventListener("click", () => {
+        showPage("formSection");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+flask
+flask-cors
+pandas
+numpy
+scikit-learn
+joblib
+requests
+matplotlib
+openpyxl
+langchain
+faiss-cpu
+sentence-transformers
+chromadb
