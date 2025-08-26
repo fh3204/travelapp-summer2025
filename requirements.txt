@@ -12,3 +12,4 @@ langchain
 faiss-cpu
 sentence-transformers
 chromadb
+openrouteservices
